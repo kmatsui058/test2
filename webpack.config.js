@@ -1,5 +1,4 @@
 const path = require('path');
-const isProduction = process.env.NODE_ENV === 'production';
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = (env, options) => {
   return {
@@ -18,7 +17,7 @@ module.exports = (env, options) => {
       // 出力ファイル名
       filename: 'bundle.js'
     },
-    mode: isProduction ? 'production' : 'development',
+    mode: 'development',
     module: {
       rules: [
         {
@@ -73,15 +72,11 @@ module.exports = (env, options) => {
               loader: "css-loader",
               options: {
                 url: false,
-                sourceMap: !isProduction,
                 importLoaders: 2
               }
             },
             {
               loader: "sass-loader",
-              options: {
-                sourceMap: !isProduction
-              }
             }
           ]
         }
