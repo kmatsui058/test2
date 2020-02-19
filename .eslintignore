@@ -1,0 +1,5 @@
+/gulp/**/*
+/dist/**/*
+/html/**/*
+/html/static/**/*
+/webpack.config.js
